@@ -25,3 +25,7 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+div[aria-label="Map"] div[role="dialog"] {
+  color: black;
+}
