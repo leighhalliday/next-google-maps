@@ -5,6 +5,12 @@ export default function Home() {
         <li>
           <a href="/intro">Intro to Google Maps in React</a>
         </li>
+        <li>
+          <a href="/markers">Clustered Markers</a>
+        </li>
+        <li>
+          <a href="/directions">Directions</a>
+        </li>
       </ul>
     </main>
   );

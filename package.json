@@ -19,7 +19,7 @@
     "tailwindcss": "3.3.3"
   },
   "devDependencies": {
-    "@types/googlemaps": "^3.43.3",
+    "@types/google.maps": "^3.54.3",
     "@types/node": "20.6.5",
     "@types/react": "18.2.22",
     "@types/react-dom": "18.2.7",
