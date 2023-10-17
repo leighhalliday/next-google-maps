@@ -5,14 +5,13 @@ import { useEffect, useState } from "react";
 import {
   APIProvider,
   Map,
-  Marker,
   useDirectionsService,
 } from "@vis.gl/react-google-maps";
 
 export default function Intro() {
   const position = { lat: 43.6532, lng: -79.3832 };
   return (
-    <div className="w-screen h-screen">
+    <div style={{ height: "100vh", width: "100%" }}>
       <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}>
         <Map
           center={position}

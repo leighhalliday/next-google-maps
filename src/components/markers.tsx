@@ -9,7 +9,6 @@ type Props = { points: Point[] };
 export const Markers = ({ points }: Props) => {
   const map = useMap();
   const [markers, setMarkers] = useState<{ [key: string]: ClusterMarker }>({});
-  // const markersRef = useRef<{ [key: string]: ClusterMarker }>({});
   const clusterer = useRef<MarkerClusterer | null>(null);
 
   useEffect(() => {
@@ -47,31 +46,9 @@ export const Markers = ({ points }: Props) => {
     });
   };
 
-  // Attempting using refs to test performance
-  // const setMarkerRef = (marker: ClusterMarker | null, point: Point) => {
-  //   const markers = markersRef.current;
-
-  //   if (marker && markers[point.key]) return;
-  //   if (!marker && !markers[point.key]) return;
-
-  //   if (!marker) {
-  //     clusterer.current?.removeMarker(markers[point.key]);
-  //     delete markers[point.key];
-  //   } else {
-  //     clusterer.current?.addMarker(marker);
-  //     markers[point.key] = marker;
-  //   }
-  // };
-
   return (
     <>
       {points.map((point) => (
-        // <Marker
-        //   key={JSON.stringify(point)}
-        //   position={point}
-        //   ref={(marker) => setMarkerRef(marker, point)}
-        //   onClick={() => console.log("clicked")}
-        // />
         <AdvancedMarker
           position={point}
           key={point.key}
