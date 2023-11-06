@@ -30,6 +30,10 @@ div[aria-label="Map"] div[role="dialog"] {
   color: black;
 }
 
+h1 {
+  @apply pt-4 text-xl;
+}
+
 h2 {
   @apply pt-4 text-xl;
 }

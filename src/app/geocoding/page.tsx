@@ -17,7 +17,7 @@ function Geocoding() {
     useState<google.maps.Geocoder>();
   const [geocodingResult, setGeocodingResult] =
     useState<google.maps.GeocoderResult>();
-  const [address, _setAddress] = useState("10 Front st, Toronto");
+  const [address, _setAddress] = useState("10 Front St, Toronto");
 
   useEffect(() => {
     if (!geocodingApiLoaded) return;
@@ -25,14 +25,14 @@ function Geocoding() {
   }, [geocodingApiLoaded]);
 
   useEffect(() => {
-    if (!geocodingService) return;
+    if (!geocodingService || !address) return;
 
     geocodingService.geocode({ address }, (results, status) => {
       if (results && status === "OK") {
         setGeocodingResult(results[0]);
       }
     });
-  }, [address, geocodingService]);
+  }, [geocodingService, address]);
 
   if (!geocodingService) return <div>Loading...</div>;
   if (!geocodingResult) return <div>Geocoding...</div>;
