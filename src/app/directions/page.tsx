@@ -51,8 +51,8 @@ function Directions() {
   return (
     <>
       {leg && (
-        <div className="absolute w-80 right-0 top-0 p-4 m-4 bg-slate-900 text-white rounded">
-          <h2 className="text-xl">{selected.summary}</h2>
+        <div className="directions">
+          <h2>{selected.summary}</h2>
           <p>
             {leg.start_address.split(",")[0]} to {leg.end_address.split(",")[0]}
           </p>
@@ -65,12 +65,12 @@ function Directions() {
 
           {routes.length > 0 && (
             <>
-              <h2 className="pt-4 text-xl">Other Routes</h2>
+              <h2>Other Routes</h2>
               <ul>
                 {routes.map((route, index) => (
                   <li key={route.summary}>
                     <button
-                      className="text-yellow-100"
+                      className="btn-route"
                       onClick={() => {
                         setRouteIndex(index);
                         setRenderedRouteIndex?.(index);

@@ -29,3 +29,15 @@ body {
 div[aria-label="Map"] div[role="dialog"] {
   color: black;
 }
+
+h2 {
+  @apply pt-4 text-xl;
+}
+
+.directions {
+  @apply absolute w-80 right-0 top-0 p-4 pt-0 m-4 bg-slate-900 text-white rounded;
+}
+
+.btn-route {
+  @apply text-yellow-100;
+}
