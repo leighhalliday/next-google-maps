@@ -8,7 +8,7 @@ import {
 } from "@vis.gl/react-google-maps";
 import { MarkerClusterer } from "@googlemaps/markerclusterer";
 import type { Marker } from "@googlemaps/markerclusterer";
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import trees from "../../data/trees";
 // [{ name: "Oak, English", lat: 43.64, lng: -79.41, key: "ABCD" }]
 
