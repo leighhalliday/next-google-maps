@@ -59,6 +59,8 @@ function Directions() {
         directionsRenderer.setDirections(response);
         setRoutes(response.routes);
       });
+
+    return () => directionsRenderer.setMap(null);
   }, [directionsService, directionsRenderer]);
 
   useEffect(() => {
