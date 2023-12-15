@@ -4,15 +4,23 @@ import {
   APIProvider,
   Map,
   useMap,
-  AdvancedMarker,
+  AdvancedMarker
 } from "@vis.gl/react-google-maps";
 import { MarkerClusterer } from "@googlemaps/markerclusterer";
 import type { Marker } from "@googlemaps/markerclusterer";
 import { useEffect, useState, useRef } from "react";
-import trees from "../../data/trees";
+import trees, { Tree } from "../../data/trees";
 // [{ name: "Oak, English", lat: 43.64, lng: -79.41, key: "ABCD" }]
 
 export default function Intro() {
+  const [points, setPoints] = useState<Tree[]>(trees.slice(0,5));
+  useEffect(() => {
+    (async () => {
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      setPoints(trees);
+    })();
+  }, []);
+
   return (
     <div style={{ height: "100vh", width: "100%" }}>
       <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}>
@@ -21,7 +29,7 @@ export default function Intro() {
           zoom={10}
           mapId={process.env.NEXT_PUBLIC_MAP_ID}
         >
-          <Markers points={trees} />
+          <Markers points={points} />
         </Map>
       </APIProvider>
     </div>
