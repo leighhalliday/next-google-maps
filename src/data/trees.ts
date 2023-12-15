@@ -507,4 +507,6 @@ const formatted: Tree[] = trees.map(([name, lat, lng]) => ({
   key: JSON.stringify({ name, lat, lng }),
 }));
 
-export default formatted;
+export default formatted ;
+export type { Tree };
+
